@@ -1,0 +1,388 @@
+{
+  "placeholderImages": [
+    {
+      "id": "fiddle-leaf",
+      "description": "Mature Fiddle Leaf Fig in a designer ceramic pot",
+      "imageHint": "fiddle fig",
+      "imageUrl": "/images/fiddle-leaf.png"
+    },
+    {
+      "id": "monstera",
+      "description": "Mature Monstera Deliciosa with large split leaves",
+      "imageHint": "monstera plant",
+      "imageUrl": "/images/monstera.png"
+    },
+    {
+      "id": "snake-plant",
+      "description": "Architectural Snake Plant in minimal setting",
+      "imageHint": "snake plant",
+      "imageUrl": "/images/snake-plant.png"
+    },
+    {
+      "id": "pothos",
+      "description": "Trailing Golden Pothos vine",
+      "imageHint": "pothos plant",
+      "imageUrl": "/images/pothos.png"
+    },
+    {
+      "id": "zz-plant",
+      "description": "Glossy ZZ plant in black pot",
+      "imageHint": "zz plant",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Zamioculcas_zamiifolia_1.jpg"
+    },
+    {
+      "id": "bird-paradise",
+      "description": "Large Bird of Paradise tropical leaves",
+      "imageHint": "bird paradise",
+      "imageUrl": "/images/bird-paradise.png"
+    },
+    {
+      "id": "aloe-vera",
+      "description": "Aloe Vera succulent in terracotta",
+      "imageHint": "aloe vera",
+      "imageUrl": "https://images.unsplash.com/photo-1596547609652-9cf5d8d76921?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+      "id": "peace-lily",
+      "description": "Peace Lily with white spathe flower",
+      "imageHint": "peace lily",
+      "imageUrl": "https://images.unsplash.com/photo-1593691509543-c55fb32d8de5?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+      "id": "boston-fern",
+      "description": "Lush Boston Fern hanging plant",
+      "imageHint": "boston fern",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/30/Boston_Fern_%282873392811%29.png"
+    },
+    {
+      "id": "jade-plant",
+      "description": "Mature Jade succulent tree",
+      "imageHint": "jade plant",
+      "imageUrl": "https://images.unsplash.com/photo-1616189597001-9046fce2594d?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+      "id": "spider-plant",
+      "description": "Variegated Spider Plant with runners",
+      "imageHint": "spider plant",
+      "imageUrl": "https://images.unsplash.com/photo-1608161779298-f42256d2c58d?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+      "id": "calathea",
+      "description": "Calathea Orbifolia with striped leaves",
+      "imageHint": "calathea plant",
+      "imageUrl": "https://images.unsplash.com/photo-1545241047-6083a3684587?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+      "id": "rubber-tree",
+      "description": "Burgundy Rubber Tree glossy foliage",
+      "imageHint": "rubber tree",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/16/Ficus_elastica_leaves_02.JPG"
+    },
+    {
+      "id": "pilea",
+      "description": "Chinese Money Plant Pilea",
+      "imageHint": "pilea plant",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Pilea_peperomioides_Chinese_money_plant.jpg"
+    },
+    {
+      "id": "lavender-english",
+      "description": "Purple English Lavender blooms",
+      "imageHint": "lavender plant",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/40/Lavandula_angustifolia_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-087.jpg"
+    },
+    {
+      "id": "pomegranate",
+      "description": "Dwarf Pomegranate Bonsai fruit",
+      "imageHint": "pomegranate tree",
+      "imageUrl": "https://images.unsplash.com/photo-1601767770428-265b2c67780c?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+      "id": "lemon-tree",
+      "description": "Meyer Lemon Tree with fruit",
+      "imageHint": "lemon tree",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/98/Meyer_Lemon.jpg"
+    },
+    {
+      "id": "rosemary",
+      "description": "Mediterranean Rosemary herb",
+      "imageHint": "rosemary herb",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Rosemary_in_bloom.JPG"
+    },
+    {
+      "id": "string-of-hearts",
+      "description": "Trailing String of Hearts vine",
+      "imageHint": "string hearts",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/55/Ceropegia_linearis_subsp_woodii.jpg"
+    },
+    {
+      "id": "blue-star-fern",
+      "description": "Blue Star Fern silvery fronds",
+      "imageHint": "blue fern",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Starr_050107-2831_Phlebodium_aureum.jpg"
+    },
+    {
+      "id": "desert-rose",
+      "description": "Desert Rose Adenium bloom",
+      "imageHint": "desert rose",
+      "imageUrl": "https://images.unsplash.com/photo-1718473476823-1ae4b63d6c7b?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+      "id": "venus-flytrap",
+      "description": "Carnivorous Venus Flytrap",
+      "imageHint": "venus flytrap",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/37/Venus_Flytrap_showing_trigger_hairs.jpg"
+    },
+    {
+      "id": "blue-spruce",
+      "description": "Blue Spruce evergreen needles",
+      "imageHint": "blue spruce",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Blue_Spruce_%2815905530369%29.jpg"
+    },
+    {
+      "id": "basil",
+      "description": "Fresh Sweet Basil herb",
+      "imageHint": "basil herb",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/97/Ocimum_basilicum_8zz.jpg"
+    },
+    {
+      "id": "orchid",
+      "description": "White Phalaenopsis Moth Orchid",
+      "imageHint": "white orchid",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Phalaenopsis_philippinensis_NationalOrchidGarden-Singapore.jpg"
+    },
+    {
+      "id": "string-of-pearls",
+      "description": "Trailing String of Pearls succulent",
+      "imageHint": "string pearls",
+      "imageUrl": "https://images.unsplash.com/photo-1648070024741-43f8fa965966?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+      "id": "chili",
+      "description": "Red Thai Chili peppers",
+      "imageHint": "chili plant",
+      "imageUrl": "https://images.unsplash.com/photo-1518006959466-0db0b6b4c1d0?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+      "id": "eucalyptus",
+      "description": "Silver Dollar Eucalyptus branch",
+      "imageHint": "eucalyptus branch",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/32/Eucalyptus_cinerea_habit.jpg"
+    },
+    {
+      "id": "gardenia",
+      "description": "White Gardenia fragrant flower",
+      "imageHint": "gardenia flower",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/54/Gardenia_jasminoides_flower_Argentina.jpg"
+    },
+    {
+      "id": "japanese-maple",
+      "description": "Red Japanese Maple tree",
+      "imageHint": "maple tree",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Acer_palmatum0.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    {
+      "id": "sago-palm",
+      "description": "Ancient Sago Palm Cycad",
+      "imageHint": "sago palm",
+      "imageUrl": "https://images.unsplash.com/photo-1545241047-6083a3684587?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+      "id": "dragon-tree",
+      "description": "Dracaena Marginata Dragon Tree",
+      "imageHint": "dragon tree",
+      "imageUrl": "https://images.unsplash.com/photo-1769184614135-f2e714e17230?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+      "id": "cast-iron",
+      "description": "Indestructible Cast Iron plant",
+      "imageHint": "cast iron",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Aspidistra_elatior1.jpg"
+    },
+    {
+      "id": "bromeliad",
+      "description": "Tropical Bromeliad flower",
+      "imageHint": "bromeliad flower",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/80/DirkvdM_red-white-stripe_flower.jpg"
+    },
+    {
+      "id": "air-plant",
+      "description": "Tillandsia Air Plant",
+      "imageHint": "air plant",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Tillandsia_fasciculata.jpg"
+    },
+    {
+      "id": "alocasia-polly",
+      "description": "Exotic Alocasia Polly Mask",
+      "imageHint": "alocasia plant",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Alocasia_x_amazonica_a1.jpg"
+    },
+    {
+      "id": "prayer-plant",
+      "description": "Maranta Prayer Plant foliage",
+      "imageHint": "prayer plant",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Maranta_leuconeura3.jpg"
+    },
+    {
+      "id": "string-bananas",
+      "description": "Trailing String of Bananas",
+      "imageHint": "trailing succulent",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/91/String_of_Bananas.JPG"
+    },
+    {
+      "id": "burro-tail",
+      "description": "Lush Burro's Tail succulent",
+      "imageHint": "burro tail",
+      "imageUrl": "https://images.unsplash.com/photo-1768508087589-2181419231d8?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+      "id": "anthurium-red",
+      "description": "Red Anthurium tropical flower",
+      "imageHint": "anthurium flower",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8b/AnthuriumAndraenum.jpg"
+    },
+    {
+      "id": "african-violet",
+      "description": "Purple African Violet",
+      "imageHint": "african violet",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Saintpaulia_ionantha.jpg"
+    },
+    {
+      "id": "money-tree",
+      "description": "Braided Pachira Money Tree",
+      "imageHint": "money tree",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/60/Flickr_-_archer10_%28Dennis%29_-_Guatemala-1376.jpg"
+    },
+    {
+      "id": "bamboo-palm",
+      "description": "Tropical Bamboo Palm",
+      "imageHint": "bamboo palm",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/df/Chamaedorea_seifrizii7.jpg"
+    },
+    {
+      "id": "kimberly-fern",
+      "description": "Kimberly Queen Fern fronds",
+      "imageHint": "kimberly fern",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/32/KimberlyQueenFern.JPG"
+    },
+    {
+      "id": "peperomia-hope",
+      "description": "Peperomia Hope round leaves",
+      "imageHint": "peperomia plant",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Four-leaved_Peperomia_Minnamurra.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    {
+      "id": "fishbone-cactus",
+      "description": "Zig-zag Fishbone Cactus",
+      "imageHint": "fishbone cactus",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/47/Epiphyllum_anguliger1Emma_Lindahl.jpg"
+    },
+    {
+      "id": "stapelia",
+      "description": "Starfish flower Stapelia",
+      "imageHint": "stapelia plant",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Stapelia_gigantea00.jpg"
+    },
+    {
+      "id": "ghost-pepper",
+      "description": "Spicy Ghost Pepper pods",
+      "imageHint": "hot pepper",
+      "imageUrl": "https://images.unsplash.com/photo-1662039914083-c9d2e4ca3b12?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+      "id": "juniper-bonsai",
+      "description": "Shinkaku Juniper Bonsai tree",
+      "imageHint": "juniper bonsai",
+      "imageUrl": "https://images.unsplash.com/photo-1512428813834-c702c7702b78?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+      "id": "mint-herb",
+      "description": "Fresh Mint Peppermint",
+      "imageHint": "mint herb",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/72/Pfefferminze_natur_peppermint.jpg"
+    },
+    {
+      "id": "thyme-herb",
+      "description": "Garden Thyme sprigs",
+      "imageHint": "thyme herb",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Thymus_vulgaris1.JPG"
+    },
+    {
+      "id": "oregano-herb",
+      "description": "Mediterranean Oregano herb",
+      "imageHint": "oregano herb",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/14/Origanum_vulgare_-_harilik_pune.jpg"
+    },
+    {
+      "id": "lavender-munstead",
+      "description": "Compact Munstead Lavender",
+      "imageHint": "lavender field",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/40/Lavandula_angustifolia_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-087.jpg"
+    },
+    {
+      "id": "chamomile-plant",
+      "description": "White Chamomile daisy",
+      "imageHint": "chamomile flower",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Matricaria_February_2008-1.jpg"
+    },
+    {
+      "id": "blue-orchid",
+      "description": "Rare Blue Vanda Orchid",
+      "imageHint": "blue orchid",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b3/An_orchid_%28Vanda_caerulea%29%3B_flowering_stem._Watercolour._Wellcome_V0043303.jpg"
+    },
+    {
+      "id": "hero-banner",
+      "description": "Cinematic Monstera living room",
+      "imageHint": "monstera pot",
+      "imageUrl": "https://images.unsplash.com/photo-1614594975525-e45190c55d0b?q=80&w=1200&auto=format&fit=crop"
+    },
+    {
+      "id": "greenhouse",
+      "description": "Lush botanical greenhouse",
+      "imageHint": "glass greenhouse",
+      "imageUrl": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=1200&auto=format&fit=crop"
+    },
+    {
+      "id": "about-hero",
+      "description": "Botanist tending to plants",
+      "imageHint": "botanist greenhouse",
+      "imageUrl": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=1200&auto=format&fit=crop"
+    },
+    {
+      "id": "care-watering",
+      "description": "Watering a houseplant",
+      "imageHint": "watering plant",
+      "imageUrl": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+      "id": "care-lighting",
+      "description": "Plant in sunlit window",
+      "imageHint": "sunlight plant",
+      "imageUrl": "https://images.unsplash.com/photo-1512428813834-c702c7702b78?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+      "id": "care-pests",
+      "description": "Checking plant leaves",
+      "imageHint": "plant pest",
+      "imageUrl": "https://images.unsplash.com/photo-1592150621744-aca64f48394a?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+      "id": "care-climate",
+      "description": "Misting tropical plant",
+      "imageHint": "tropical humidity",
+      "imageUrl": "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+      "id": "care-repotting",
+      "description": "Repotting botanical plant",
+      "imageHint": "repotting plant",
+      "imageUrl": "https://images.unsplash.com/photo-1545167622-3a6ac756afa4?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+      "id": "succulent",
+      "imageUrl": "https://images.unsplash.com/photo-1463936575829-25148e1db1b8?q=80&w=800&auto=format&fit=crop",
+      "imageHint": "succulent arrangement",
+      "description": "Multi-succulent arrangement"
+    }
+  ]
+}

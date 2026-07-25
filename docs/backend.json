@@ -1,0 +1,63 @@
+
+{
+  "entities": {
+    "Contact": {
+      "title": "Contact Inquiry",
+      "description": "Information from the contact form submission",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "subject": { "type": "string" },
+        "message": { "type": "string" },
+        "createdAt": { "type": "object" }
+      },
+      "required": ["name", "email", "message"]
+    },
+    "Order": {
+      "title": "Customer Order",
+      "description": "Details of a botanical purchase",
+      "type": "object",
+      "properties": {
+        "customer": {
+          "type": "object",
+          "properties": {
+            "firstName": { "type": "string" },
+            "lastName": { "type": "string" },
+            "address": { "type": "string" },
+            "city": { "type": "string" },
+            "state": { "type": "string" },
+            "zip": { "type": "string" }
+          }
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "name": { "type": "string" },
+              "price": { "type": "number" }
+            }
+          }
+        },
+        "total": { "type": "number" },
+        "createdAt": { "type": "object" },
+        "status": { "type": "string", "enum": ["pending", "processing", "shipped"] }
+      }
+    }
+  },
+  "auth": {
+    "providers": ["google.com"]
+  },
+  "firestore": {
+    "/contacts/{contactId}": {
+      "schema": "#/entities/Contact",
+      "description": "Collection of contact form submissions"
+    },
+    "/orders/{orderId}": {
+      "schema": "#/entities/Order",
+      "description": "Collection of customer orders"
+    }
+  }
+}

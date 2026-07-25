@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 20% 98%; /* Slightly warmer, creamier white */
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 158 35% 10%; /* Darker Forest #0d1a15 */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 142 60% 45%; /* Vibrant Botanical Green */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 142 45% 95%;
+    --accent-foreground: 158 35% 15%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 142 60% 50%;
+    --radius: 2rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased selection:bg-secondary/30;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline tracking-tighter font-extrabold;
+  }
+}
+
+@layer components {
+  .pill-button {
+    @apply rounded-full font-black uppercase tracking-widest transition-all duration-300 active:scale-95;
+  }
+  
+  .glass-card {
+    @apply bg-white/60 backdrop-blur-2xl border border-white/20 shadow-[0_8px_40px_rgba(0,0,0,0.04)];
+  }
+
+  .spotify-shadow {
+    @apply shadow-[0_12px_32px_rgba(0,0,0,0.08)];
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  }
+}
+
+@keyframes slideUp {
+  0% { transform: translateY(30px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
