@@ -271,6 +271,67 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 ---
 
+## 🚀 DevOps & Deployment Architecture
+
+This project implements a full GitOps-based CI/CD pipeline:
+
+```
+┌─────────────┐    ┌──────────┐    ┌─────────────┐    ┌──────────┐    ┌───────────┐
+│  Developer  │───▶│  GitHub  │───▶│  Jenkins CI │───▶│   ECR    │    │    EKS    │
+│  git push   │    │   Repo   │    │ Build/Test  │    │  Docker  │    │  Cluster  │
+└─────────────┘    └────┬─────┘    │ Push to ECR │    │  Images  │    └─────┬─────┘
+                        │          └──────┬──────┘    └──────────┘          │
+                        │                 │                                 │
+                        │          ┌──────▼──────┐                          │
+                        └─────────▶│   ArgoCD    │─────────────────────────▶│
+                                   │  GitOps CD  │   Sync K8s manifests    │
+                                   └─────────────┘                   ┌─────▼─────┐
+                                                                     │Prometheus │
+                                                                     │ + Grafana │
+                                                                     └───────────┘
+```
+
+### Pipeline Flow
+
+| Stage | Tool | Action |
+|-------|------|--------|
+| **Local Test** | Minikube | Validate K8s manifests locally (zero cost) |
+| **Containerize** | Docker | Multi-stage build → standalone Next.js image |
+| **Infra** | Terraform | Provision VPC, ECR, EKS, Jenkins EC2, ArgoCD, Monitoring |
+| **CI** | Jenkins | Build → Test → Push image to ECR → Update manifest |
+| **CD** | ArgoCD | Watch Git repo → Auto-sync deployments to EKS |
+| **Monitor** | Prometheus/Grafana | Pod metrics, request rates, dashboards |
+| **Teardown** | Terraform | `terraform destroy` — stops all billing |
+
+### Quick Start
+
+```bash
+# Sequence 2 — Docker
+docker build -t verdantnest .
+docker run -p 3000:3000 --env-file .env verdantnest
+
+# Sequence 3 — Minikube
+minikube start
+minikube image load verdantnest
+kubectl apply -f k8s/
+minikube service verdantnest-service
+
+# Sequence 4 — AWS Infrastructure
+cd infra && terraform init && terraform apply
+
+# Sequence 10 — Destroy (stops billing)
+cd infra && terraform destroy
+```
+
+### Cost Safety
+
+- 🕐 `terraform apply` only when actively demoing
+- 💰 EKS node: `t3.small` | Jenkins: `t2.micro` (Free Tier)
+- 🚨 Set AWS Budget alert at $10-15
+- 🧹 Always tear down via `terraform destroy`
+
+---
+
 <p align="center">
   Made with 💚 by the VerdantNest Botanical Team
 </p>

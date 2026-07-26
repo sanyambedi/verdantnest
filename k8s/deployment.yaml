@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: verdantnest
+  labels:
+    app: verdantnest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: verdantnest
+  template:
+    metadata:
+      labels:
+        app: verdantnest
+    spec:
+      containers:
+        - name: verdantnest
+          image: 018789813568.dkr.ecr.ap-south-1.amazonaws.com/verdantnest:v1
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000
+              protocol: TCP
+          envFrom:
+            - secretRef:
+                name: verdantnest-secrets
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "256Mi"
+              cpu: "250m"
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 15
+            periodSeconds: 20
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 5
+            periodSeconds: 10
