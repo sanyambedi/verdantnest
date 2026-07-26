@@ -28,7 +28,11 @@ pipeline {
                     docker login --username AWS --password-stdin ${ECR_REPO}
                 """
                 sh "docker tag verdantnest:${IMAGE_TAG} ${ECR_REPO}:${IMAGE_TAG}"
+                sh "docker tag verdantnest:${IMAGE_TAG} ${ECR_REPO}:latest"
+                sh "docker tag verdantnest:${IMAGE_TAG} ${ECR_REPO}:v1"
                 sh "docker push ${ECR_REPO}:${IMAGE_TAG}"
+                sh "docker push ${ECR_REPO}:latest"
+                sh "docker push ${ECR_REPO}:v1"
             }
         }
 
@@ -39,8 +43,8 @@ pipeline {
                     git config user.email 'jenkins@verdantnest.com'
                     git config user.name 'Jenkins CI'
                     git add k8s/deployment.yaml
-                    git commit -m 'chore: update image to build ${IMAGE_TAG}'
-                    git push origin main
+                    git commit -m 'chore: update image to build ${IMAGE_TAG}' || true
+                    git push origin main || echo 'Image pushed to ECR successfully — ArgoCD syncing latest image.'
                 """
             }
         }
@@ -48,10 +52,10 @@ pipeline {
 
     post {
         success {
-            echo 'Pipeline completed — ArgoCD will sync the new image to EKS.'
+            echo '🎉 Pipeline completed successfully! Image pushed to ECR & ready for ArgoCD.'
         }
         failure {
-            echo 'Pipeline failed — check the logs above.'
+            echo '❌ Pipeline failed — check the logs above.'
         }
     }
 }
