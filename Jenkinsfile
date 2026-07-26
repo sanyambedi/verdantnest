@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     environment {
+        AWS_ACCOUNT_ID  = '018789813568'
         AWS_REGION      = 'ap-south-1'
         ECR_REPO        = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/verdantnest"
         IMAGE_TAG       = "${BUILD_NUMBER}"
