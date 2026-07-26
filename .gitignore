@@ -45,3 +45,11 @@ firebase-debug.log
 firestore-debug.log
 # Local Netlify folder
 .netlify
+
+# Terraform state & working files
+**/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfplan
+infra/ssm-cmd.json
