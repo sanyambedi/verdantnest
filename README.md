@@ -249,38 +249,16 @@ VerdantNest uses a custom HSL-based design token system:
 | **Accent** | `hsl(142 45% 95%)` | Soft mint tint |
 
 **Typography**: Plus Jakarta Sans (headlines) · Inter (body)  
-**Geometry**: Soft rounded corners (2rem–5rem), glassmorphism cards, pill buttons
+**Geometry**: Soft rounded corners (2rem–5rem), ## 🚀 DevOps & Deployment Architecture
 
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🚀 DevOps & Deployment Architecture
-
-This project implements a full GitOps-based CI/CD pipeline:
+This project implements an enterprise-grade GitOps CI/CD pipeline deployed on AWS:
 
 ```
 ┌─────────────┐    ┌──────────┐    ┌─────────────┐    ┌──────────┐    ┌───────────┐
-│  Developer  │───▶│  GitHub  │───▶│  Jenkins CI │───▶│   ECR    │    │    EKS    │
-│  git push   │    │   Repo   │    │ Build/Test  │    │  Docker  │    │  Cluster  │
-└─────────────┘    └────┬─────┘    │ Push to ECR │    │  Images  │    └─────┬─────┘
-                        │          └──────┬──────┘    └──────────┘          │
+│  Developer  │───▶│  GitHub  │───▶│  Jenkins CI │───▶│ AWS ECR  │    │  AWS EKS  │
+│  git push   │    │   Repo   │    │  Build/Tag  │    │ Registry │    │  Cluster  │
+└─────────────┘    └────┬─────┘    │ Push to ECR │    └──────────┘    └─────┬─────┘
+                        │          └──────┬──────┘                          │
                         │                 │                                 │
                         │          ┌──────▼──────┐                          │
                         └─────────▶│   ArgoCD    │─────────────────────────▶│
@@ -291,13 +269,31 @@ This project implements a full GitOps-based CI/CD pipeline:
                                                                      └───────────┘
 ```
 
-### Pipeline Flow
+### ⚡ Verified Live Infrastructure & Endpoints
+
+| Component | Status | URL / Access Command | Credentials / Notes |
+| :--- | :---: | :--- | :--- |
+| **Live Web App (EKS LoadBalancer)** | 🟢 **LIVE** | [http://a4ce61799c30e49eab665942229ba8cb-124042606.ap-south-1.elb.amazonaws.com](http://a4ce61799c30e49eab665942229ba8cb-124042606.ap-south-1.elb.amazonaws.com) | AWS Classic ELB to Next.js 15 |
+| **Jenkins CI/CD Server** | 🟢 **GREEN** | [http://13.201.57.68:8080](http://13.201.57.68:8080) | EC2 `t3.small` (2GB RAM, 30GB gp3 SSD) |
+| **ArgoCD GitOps Dashboard** | 🟢 **LIVE** | [http://a805bb727f3c34d3d985b6d4511fde03-1876114788.ap-south-1.elb.amazonaws.com](http://a805bb727f3c34d3d985b6d4511fde03-1876114788.ap-south-1.elb.amazonaws.com) | `admin` / `7V4pD0EOj4TpsOAC` |
+| **Grafana Monitoring UI** | 🟢 **LIVE** | `kubectl port-forward svc/monitoring-grafana -n monitoring 3000:80` → [http://localhost:3000](http://localhost:3000) | `admin` / `VerdantNest2024!` |
+
+### 🔄 Pipeline Flow
 
 | Stage | Tool | Action |
 |-------|------|--------|
-| **Local Test** | Minikube | Validate K8s manifests locally (zero cost) |
-| **Containerize** | Docker | Multi-stage build → standalone Next.js image |
-| **Infra** | Terraform | Provision VPC, ECR, EKS, Jenkins EC2, ArgoCD, Monitoring |
+| **Containerize** | Docker | Multi-stage build producing optimized standalone Next.js image |
+| **Infra as Code** | Terraform | Provision VPC, ECR, EKS Cluster, Jenkins EC2 (`t3.small`), IAM Roles, ArgoCD, Prometheus/Grafana |
+| **CI Automation** | Jenkins | Git Checkout → Docker Build → ECR Login → Push `:latest`, `:v1`, `:${BUILD_NUMBER}` |
+| **GitOps CD** | ArgoCD | Auto-sync `k8s/argocd-app.yaml` manifest → Deploy to EKS cluster |
+| **Monitoring** | Prometheus + Grafana | Real-time pod CPU/RAM metrics, request rates, node health |
+| **Teardown** | Terraform | `cd infra && terraform destroy -auto-approve` — Stops all billing |
+
+---
+
+<p align="center">
+  Made with 💚 by the VerdantNest Botanical & DevOps Team
+</p>rraform | Provision VPC, ECR, EKS, Jenkins EC2, ArgoCD, Monitoring |
 | **CI** | Jenkins | Build → Test → Push image to ECR → Update manifest |
 | **CD** | ArgoCD | Watch Git repo → Auto-sync deployments to EKS |
 | **Monitor** | Prometheus/Grafana | Pod metrics, request rates, dashboards |
