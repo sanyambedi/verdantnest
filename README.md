@@ -1,333 +1,133 @@
 <p align="center">
-  <img src="https://img.icons8.com/fluency/96/potted-plant.png" alt="VerdantNest Logo" width="80" />
+  <img src="https://img.icons8.com/fluency/96/cloud-lighting.png" alt="DevOps Cloud Logo" width="80" />
 </p>
 
-<h1 align="center">🌿 VerdantNest</h1>
+<h1 align="center">🚀 VerdantNest — Production-Grade GitOps & DevOps Infrastructure</h1>
 
 <p align="center">
-  <strong>Premium Botanical E-Commerce & Plant Care Platform</strong>
-</p>
-
-<p align="center">
-  <em>Architect your living space with expertly curated indoor plants, rare species, and AI-powered botanical care.</em>
+  <strong>Enterprise Kubernetes (AWS EKS) • Infrastructure as Code (Terraform) • Automated CI/CD (Jenkins) • GitOps (ArgoCD) • Observability (Prometheus & Grafana)</strong>
 </p>
 
 <p align="center">
-  <a href="#features"><img src="https://img.shields.io/badge/Plants-55%2B%20Species-2ecc71?style=for-the-badge&logo=pagespeedinsights&logoColor=white" alt="Plants" /></a>
-  <a href="#tech-stack"><img src="https://img.shields.io/badge/Next.js-15.5-black?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js" /></a>
-  <a href="#tech-stack"><img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" /></a>
-  <a href="#ai-features"><img src="https://img.shields.io/badge/AI-Gemini%202.5-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Gemini AI" /></a>
-  <a href="#tech-stack"><img src="https://img.shields.io/badge/Firebase-Firestore-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" alt="Firebase" /></a>
-  <a href="#license"><img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License" /></a>
+  <a href="#-devops--cloud-architecture"><img src="https://img.shields.io/badge/AWS-EKS%20v1.29-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS EKS" /></a>
+  <a href="#-devops--cloud-architecture"><img src="https://img.shields.io/badge/Terraform-IaC-7B42BC?style=for-the-badge&logo=terraform&logoColor=white" alt="Terraform" /></a>
+  <a href="#-devops--cloud-architecture"><img src="https://img.shields.io/badge/Jenkins-CI%2FCD-D24939?style=for-the-badge&logo=jenkins&logoColor=white" alt="Jenkins" /></a>
+  <a href="#-devops--cloud-architecture"><img src="https://img.shields.io/badge/ArgoCD-GitOps-EF6C00?style=for-the-badge&logo=argo&logoColor=white" alt="ArgoCD" /></a>
+  <a href="#-devops--cloud-architecture"><img src="https://img.shields.io/badge/Grafana-Monitoring-F46800?style=for-the-badge&logo=grafana&logoColor=white" alt="Grafana" /></a>
+  <a href="#-devops--cloud-architecture"><img src="https://img.shields.io/badge/Docker-Containers-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" /></a>
 </p>
 
 <br />
 
 ---
 
-## 📋 Table of Contents
+## 📋 Project Summary & DevOps Highlights
 
-- [Overview](#-overview)
-- [Features](#-features)
-- [AI Features](#-ai-features)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-- [Getting Started](#-getting-started)
-- [Environment Variables](#-environment-variables)
-- [Scripts](#-scripts)
-- [Pages & Routes](#-pages--routes)
-- [Design System](#-design-system)
-- [Contributing](#-contributing)
-- [License](#-license)
+This repository contains a full **Production DevOps & Cloud Engineering Architecture** built to automate the provisioning, containerization, deployment, and monitoring of the **VerdantNest** microservices application.
+
+### 🌟 Key Technical Accomplishments
+- **Zero-Touch Infrastructure Provisioning**: 100% codified using **Terraform** to provision AWS VPCs, Subnets, EKS Cluster, ECR Repository, IAM Roles, Security Groups, and Helm Chart releases.
+- **Self-Healing CI/CD Pipeline**: Configured **Jenkins** inside Docker on AWS EC2 with host binary volume mounts and native ECR IAM Instance Profile authentication.
+- **GitOps Continuous Delivery**: Configured **ArgoCD** to automatically reconcile Kubernetes manifests from GitHub to EKS within seconds of code changes.
+- **Full Observability Stack**: Integrated **Prometheus** for cluster metric collection and **Grafana** for real-time CPU/RAM/Network visualization.
 
 ---
 
-## 🌱 Overview
+## 🏗️ DevOps & Cloud Architecture
 
-**VerdantNest** is a modern, full-stack botanical e-commerce platform built with Next.js 15 and powered by Google's Gemini AI. It offers a premium shopping experience for plant enthusiasts — featuring a curated catalog of 55+ species, an AI Plant Doctor for diagnostics, interactive care guides, and a sleek admin dashboard with AI-powered SEO tools.
-
-> _"Cultivating Serenity Since 2020"_
-
----
-
-## ✨ Features
-
-### 🛒 E-Commerce
-- **55+ Curated Plant Species** across 8 categories (Indoor, Outdoor, Succulents, Bonsai, Herbs, and more)
-- **Advanced Filtering** — Filter by category, care difficulty, and sunlight requirements
-- **Shopping Cart & Wishlist** — Persistent across sessions via `localStorage`
-- **Full Checkout Flow** — Shipping address, payment input, and real-time order sync to Firestore
-- **Lightning Deals & Promo Codes** — Seasonal discounts with promo banner
-
-### 📖 Content & Guides
-- **Botanical Blog** — Journal-style articles with category tags, read times, and newsletter signup
-- **Interactive Care Guides** — Watering, Lighting, Pest Control, Repotting, and Climate tips
-- **Sustainability Page** — Carbon neutral commitment, peat-free soil, circular packaging
-
-### 🏢 Admin Dashboard
-- **Dark-themed Admin HQ** — Revenue analytics with Recharts area & bar charts
-- **Product Manager** — Full specimen auditor with AI SEO meta tag auto-generation
-- **Order Tracker** — Real-time order monitoring synced with Firestore
-- **AI Content Studio** — Auto-generate keyword-rich blog posts and care articles
+```
+                                    ┌─────────────────────────────────────────┐
+                                    │               AWS CLOUD                 │
+                                    │                                         │
+┌─────────────┐    ┌──────────┐    │  ┌────────────┐     ┌─────────────────┐  │    ┌─────────────────┐
+│  Developer  │───▶│  GitHub  │───▶│  │ Jenkins CI │────▶│     AWS ECR     │  │    │     AWS EKS     │
+│  git push   │    │   Repo   │    │  │ (t3.small) │     │ (Docker Registry│  │    │(Kubernetes v1.29)│
+└─────────────┘    └────┬─────┘    │  └────────────┘     └─────────────────┘  │    └────────┬────────┘
+                        │           │           │                               │             │
+                        │           │           │          ┌───────────────┐    │             │
+                        │           │           └─────────▶│    ArgoCD     │────┼─────────────┘
+                        └───────────┼─────────────────────▶│  (GitOps CD)  │    │  Sync Manifests
+                                    │                      └───────────────┘    │       │
+                                    │                                           │       ▼
+                                    │                                           │  ┌───────────┐
+                                    │                                           │  │Prometheus │
+                                    │                                           │  │ + Grafana │
+                                    │                                           │  └───────────┘
+                                    └───────────────────────────────────────────┘
+```
 
 ---
 
-## 🤖 AI Features
+## ⚡ Verified Live Infrastructure Endpoints
 
-Powered by **Google Genkit** + **Gemini 2.5 Flash** with Zod schema validation and intelligent fallback heuristics:
-
-| Feature | Description |
-|---------|-------------|
-| 🩺 **AI Plant Doctor** | Upload a photo + describe symptoms → get severity assessment, 3-5 recovery steps, prognosis, and prevention tips |
-| 🏷️ **SEO Meta Generator** | Auto-creates optimized meta titles, descriptions, and alt text for product listings |
-| ✍️ **Blog Content Generator** | Generates full botanical articles based on topic, tone, length, and target keywords |
-
----
-
-## 🛠️ Tech Stack
-
-| Layer | Technology |
-|-------|------------|
-| **Framework** | [Next.js 15.5](https://nextjs.org/) (App Router, Turbopack, Server Actions) |
-| **Language** | [TypeScript 5](https://www.typescriptlang.org/) |
-| **UI Library** | [React 19](https://react.dev/) |
-| **Styling** | [Tailwind CSS 3.4](https://tailwindcss.com/) + Custom HSL Design Tokens |
-| **UI Components** | [Radix UI](https://www.radix-ui.com/) Primitives (35+ components) |
-| **Icons** | [Lucide React](https://lucide.dev/) |
-| **AI Engine** | [Google Genkit](https://firebase.google.com/docs/genkit) + Gemini 2.5 Flash |
-| **Backend** | [Firebase](https://firebase.google.com/) (Firestore, Auth) |
-| **Charts** | [Recharts](https://recharts.org/) |
-| **Forms** | [React Hook Form](https://react-hook-form.com/) + [Zod](https://zod.dev/) |
-| **Carousel** | [Embla Carousel](https://www.embla-carousel.com/) |
+| Component | Status | Access URL / Command | Security & Access Details |
+| :--- | :---: | :--- | :--- |
+| **Live Web App (AWS LoadBalancer)** | 🟢 **LIVE** | [http://a4ce61799c30e49eab665942229ba8cb-124042606.ap-south-1.elb.amazonaws.com](http://a4ce61799c30e49eab665942229ba8cb-124042606.ap-south-1.elb.amazonaws.com) | AWS Classic ELB routing to EKS Node Port |
+| **Jenkins CI/CD Server** | 🟢 **GREEN** | [http://13.201.57.68:8080](http://13.201.57.68:8080) | EC2 `t3.small` (2GB RAM, 30GB gp3 SSD) |
+| **ArgoCD GitOps Dashboard** | 🟢 **LIVE** | [http://a805bb727f3c34d3d985b6d4511fde03-1876114788.ap-south-1.elb.amazonaws.com](http://a805bb727f3c34d3d985b6d4511fde03-1876114788.ap-south-1.elb.amazonaws.com) | `kubectl -n argocd get secret argocd-initial-admin-secret` |
+| **Grafana Monitoring UI** | 🟢 **LIVE** | `kubectl port-forward svc/monitoring-grafana -n monitoring 3000:80` → `http://localhost:3000` | `kubectl -n monitoring get secret monitoring-grafana` |
 
 ---
 
-## 📁 Project Structure
+## 🛠️ Detailed Implementation — How It Was Built
+
+### 1. Infrastructure as Code (Terraform)
+- **`infra/main.tf`**: Provisions the custom AWS VPC (`10.0.0.0/16`), public subnets with ELB tags, ECR repository with scan-on-push, and EKS Cluster (`verdantnest-eks`).
+- **`infra/jenkins.tf`**: Provisions the dedicated Jenkins EC2 instance (`t3.small`, 2GB RAM, 30GB gp3 SSD) and attaches `verdantnest-jenkins-instance-profile` with `AmazonEC2ContainerRegistryPowerUser` permissions.
+- **Helm Automations**: Automated the deployment of ArgoCD (`helm_release.argocd`) and Prometheus Stack (`helm_release.monitoring`) into EKS during `terraform apply`.
+
+### 2. Continuous Integration (Jenkins Pipeline)
+- **Multi-Stage Dockerfile**: Multi-stage Node 20 Alpine build generating a lightweight standalone Next.js 15 bundle.
+- **Automated Stages (`Jenkinsfile`)**:
+  1. **Checkout**: Pulls code from GitHub `main` branch.
+  2. **Build Docker Image**: Compiles Next.js app and tags image with `${BUILD_NUMBER}`.
+  3. **Push to ECR**: Authenticates via EC2 IAM metadata (`aws ecr get-login-password`) and pushes `:latest`, `:v1`, and `:${BUILD_NUMBER}` tags to AWS ECR.
+  4. **Manifest Update**: Updates `k8s/deployment.yaml` with the new image tag.
+
+### 3. Continuous Delivery (ArgoCD GitOps)
+- **Application CRD (`k8s/argocd-app.yaml`)**: Connects ArgoCD to `https://github.com/sanyambedi/verdantnest.git`.
+- **Automated Sync & Self-Healing**: Watches `k8s/` folder for changes, automatically applying Kubernetes `Deployments`, `Services`, and `Secrets` to EKS with zero manual downtime.
+
+### 4. Observability & Cluster Monitoring
+- **Prometheus**: Scrapes Kubernetes API, cAdvisor, and Node Exporter metrics every 15 seconds.
+- **Grafana**: Pre-configured with Kubernetes Compute Resources dashboards to monitor real-time Pod CPU utilization, Memory footprint, and Network throughput.
+
+---
+
+## 📁 Repository Structure
 
 ```
 verdantnest/
-├── public/                  # Static assets
-├── src/
-│   ├── ai/                  # Genkit AI flows
-│   │   ├── flows/
-│   │   │   ├── diagnose-plant.ts          # AI Plant Doctor
-│   │   │   ├── automate-product-seo-meta-tags.ts
-│   │   │   └── generate-seo-blog-content.ts
-│   │   ├── genkit.ts        # Genkit configuration
-│   │   └── dev.ts           # Genkit dev server
-│   ├── app/
-│   │   ├── page.tsx         # Homepage
-│   │   ├── layout.tsx       # Root layout + metadata
-│   │   ├── globals.css      # Design tokens & custom styles
-│   │   ├── shop/            # Product catalog with filters
-│   │   ├── products/[slug]/ # Dynamic product pages (SSR + JSON-LD)
-│   │   ├── ai-doctor/       # AI Plant Diagnostic tool
-│   │   ├── care-guides/     # Interactive care guides
-│   │   ├── blog/            # Botanical journal
-│   │   ├── cart/            # Shopping cart
-│   │   ├── checkout/        # Checkout flow
-│   │   ├── wishlist/        # Saved favorites
-│   │   ├── admin/           # Admin HQ dashboard
-│   │   ├── about/           # Brand story
-│   │   ├── contact/         # Contact form (Firestore)
-│   │   ├── sustainability/  # Eco commitments
-│   │   ├── privacy/         # Privacy policy
-│   │   ├── terms/           # Terms of service
-│   │   ├── lib/             # Data & utilities
-│   │   └── types/           # TypeScript types
-│   ├── components/
-│   │   ├── Navbar.tsx       # Glassmorphism floating nav
-│   │   ├── Logo.tsx         # Custom SVG brand logo
-│   │   ├── ProductCard.tsx  # Reusable product card
-│   │   └── ui/              # 35+ Radix UI primitives
-│   ├── firebase/            # Firebase config & providers
-│   ├── hooks/               # Custom React hooks
-│   └── lib/                 # Shared utilities
-├── .env                     # Environment variables (DO NOT COMMIT)
-├── tailwind.config.ts       # Tailwind + design tokens
-├── next.config.ts           # Next.js configuration
-├── package.json
-└── tsconfig.json
+├── infra/                           # Infrastructure as Code (Terraform)
+│   ├── main.tf                      # VPC, EKS, ECR, IAM, Helm releases
+│   ├── jenkins.tf                   # Jenkins EC2, Security Groups, IAM Profile
+│   ├── jenkins-setup.sh             # Automated Jenkins boot & tool setup
+│   ├── variables.tf                 # Cluster & Instance configuration
+│   └── outputs.tf                   # Deployment endpoints & URLs
+├── k8s/                             # Kubernetes Manifests
+│   ├── deployment.yaml              # App Deployment spec
+│   ├── service.yaml                 # AWS LoadBalancer Service spec
+│   ├── secrets.yaml                 # Encrypted environment secrets
+│   └── argocd-app.yaml              # ArgoCD GitOps Application spec
+├── src/                             # Next.js 15 Application Source Code
+├── Dockerfile                       # Multi-stage production container build
+├── Jenkinsfile                      # CI/CD Pipeline definition
+└── README.md                        # Enterprise DevOps documentation
 ```
 
 ---
 
-## 🚀 Getting Started
+## 🧹 Teardown Instructions (Cost Safety)
 
-### Prerequisites
-
-- [Node.js](https://nodejs.org/) **18+**
-- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
-- A [Google AI Studio](https://aistudio.google.com/) API key (for AI features)
-
-### Installation
+To clean up all AWS resources and stop billing when testing is complete:
 
 ```bash
-# Clone the repository
-git clone https://github.com/YOUR_USERNAME/verdantnest.git
-cd verdantnest
-
-# Install dependencies
-npm install
-
-# Set up environment variables
-cp .env.example .env
-# Then add your API keys to .env (see below)
-
-# Start the development server
-npm run dev
+cd infra
+terraform destroy -auto-approve
 ```
-
-The app will be available at **http://localhost:9002**
-
----
-
-## 🔐 Environment Variables
-
-Create a `.env` file in the root directory:
-
-```env
-# Google Gemini AI (Required for AI features)
-GEMINI_API_KEY=your_gemini_api_key_here
-
-# Firebase (Optional — for order sync & contact forms)
-NEXT_PUBLIC_FIREBASE_API_KEY=your_firebase_api_key
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
-NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
-NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
-```
-
-> ⚠️ **Never commit your `.env` file.** It's already in `.gitignore`.
-
----
-
-## 📜 Scripts
-
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start dev server with Turbopack (port 9002) |
-| `npm run build` | Create production build |
-| `npm start` | Start production server |
-| `npm run lint` | Run ESLint |
-| `npm run typecheck` | Run TypeScript type checking |
-| `npm run genkit:dev` | Start Genkit AI dev server |
-| `npm run genkit:watch` | Start Genkit with hot reload |
-
----
-
-## 🗺️ Pages & Routes
-
-| Route | Description |
-|-------|-------------|
-| `/` | Homepage — Hero, Best Sellers, Deals, Categories |
-| `/shop` | Full catalog with multi-faceted filtering |
-| `/products/[slug]` | Product detail with Schema.org structured data |
-| `/ai-doctor` | AI Plant Doctor — photo upload + symptom analysis |
-| `/care-guides` | Interactive botanical care guides |
-| `/blog` | Botanical journal with articles |
-| `/cart` | Shopping cart |
-| `/checkout` | Checkout with Firestore order sync |
-| `/wishlist` | Saved favorites |
-| `/admin` | Admin HQ — Dashboard, Products, Orders, SEO Tools |
-| `/contact` | Contact form (synced to Firestore) |
-| `/about` | Brand story & philosophy |
-| `/sustainability` | Environmental commitments |
-
----
-
-## 🎨 Design System
-
-VerdantNest uses a custom HSL-based design token system:
-
-| Token | Value | Usage |
-|-------|-------|-------|
-| **Background** | `hsl(30 20% 98%)` | Warm creamy white base |
-| **Primary** | `hsl(158 35% 10%)` | Deep forest green |
-| **Secondary** | `hsl(142 60% 45%)` | Vibrant botanical green |
-| **Accent** | `hsl(142 45% 95%)` | Soft mint tint |
-
-**Typography**: Plus Jakarta Sans (headlines) · Inter (body)  
-**Geometry**: Soft rounded corners (2rem–5rem), ## 🚀 DevOps & Deployment Architecture
-
-This project implements an enterprise-grade GitOps CI/CD pipeline deployed on AWS:
-
-```
-┌─────────────┐    ┌──────────┐    ┌─────────────┐    ┌──────────┐    ┌───────────┐
-│  Developer  │───▶│  GitHub  │───▶│  Jenkins CI │───▶│ AWS ECR  │    │  AWS EKS  │
-│  git push   │    │   Repo   │    │  Build/Tag  │    │ Registry │    │  Cluster  │
-└─────────────┘    └────┬─────┘    │ Push to ECR │    └──────────┘    └─────┬─────┘
-                        │          └──────┬──────┘                          │
-                        │                 │                                 │
-                        │          ┌──────▼──────┐                          │
-                        └─────────▶│   ArgoCD    │─────────────────────────▶│
-                                   │  GitOps CD  │   Sync K8s manifests    │
-                                   └─────────────┘                   ┌─────▼─────┐
-                                                                     │Prometheus │
-                                                                     │ + Grafana │
-                                                                     └───────────┘
-```
-
-### ⚡ Verified Live Infrastructure & Endpoints
-
-| Component | Status | URL / Access Command | Security & Credentials |
-| :--- | :---: | :--- | :--- |
-| **Live Web App (EKS LoadBalancer)** | 🟢 **LIVE** | [http://a4ce61799c30e49eab665942229ba8cb-124042606.ap-south-1.elb.amazonaws.com](http://a4ce61799c30e49eab665942229ba8cb-124042606.ap-south-1.elb.amazonaws.com) | AWS Classic ELB to Next.js 15 |
-| **Jenkins CI/CD Server** | 🟢 **GREEN** | [http://13.201.57.68:8080](http://13.201.57.68:8080) | Password: `sudo docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword` |
-| **ArgoCD GitOps Dashboard** | 🟢 **LIVE** | [http://a805bb727f3c34d3d985b6d4511fde03-1876114788.ap-south-1.elb.amazonaws.com](http://a805bb727f3c34d3d985b6d4511fde03-1876114788.ap-south-1.elb.amazonaws.com) | Password: `kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath='{.data.password}'` |
-| **Grafana Monitoring UI** | 🟢 **LIVE** | `kubectl port-forward svc/monitoring-grafana -n monitoring 3000:80` → [http://localhost:3000](http://localhost:3000) | Password: `kubectl -n monitoring get secret monitoring-grafana -o jsonpath='{.data.admin-password}'` |
-
-### 🔄 Pipeline Flow
-
-| Stage | Tool | Action |
-|-------|------|--------|
-| **Containerize** | Docker | Multi-stage build producing optimized standalone Next.js image |
-| **Infra as Code** | Terraform | Provision VPC, ECR, EKS Cluster, Jenkins EC2 (`t3.small`), IAM Roles, ArgoCD, Prometheus/Grafana |
-| **CI Automation** | Jenkins | Git Checkout → Docker Build → ECR Login → Push `:latest`, `:v1`, `:${BUILD_NUMBER}` |
-| **GitOps CD** | ArgoCD | Auto-sync `k8s/argocd-app.yaml` manifest → Deploy to EKS cluster |
-| **Monitoring** | Prometheus + Grafana | Real-time pod CPU/RAM metrics, request rates, node health |
-| **Teardown** | Terraform | `cd infra && terraform destroy -auto-approve` — Stops all billing |
 
 ---
 
 <p align="center">
-  Made with 💚 by the VerdantNest Botanical & DevOps Team
-</p>rraform | Provision VPC, ECR, EKS, Jenkins EC2, ArgoCD, Monitoring |
-| **CI** | Jenkins | Build → Test → Push image to ECR → Update manifest |
-| **CD** | ArgoCD | Watch Git repo → Auto-sync deployments to EKS |
-| **Monitor** | Prometheus/Grafana | Pod metrics, request rates, dashboards |
-| **Teardown** | Terraform | `terraform destroy` — stops all billing |
-
-### Quick Start
-
-```bash
-# Sequence 2 — Docker
-docker build -t verdantnest .
-docker run -p 3000:3000 --env-file .env verdantnest
-
-# Sequence 3 — Minikube
-minikube start
-minikube image load verdantnest
-kubectl apply -f k8s/
-minikube service verdantnest-service
-
-# Sequence 4 — AWS Infrastructure
-cd infra && terraform init && terraform apply
-
-# Sequence 10 — Destroy (stops billing)
-cd infra && terraform destroy
-```
-
-### Cost Safety
-
-- 🕐 `terraform apply` only when actively demoing
-- 💰 EKS node: `t3.small` | Jenkins: `t2.micro` (Free Tier)
-- 🚨 Set AWS Budget alert at $10-15
-- 🧹 Always tear down via `terraform destroy`
-
----
-
-<p align="center">
-  Made with 💚 by the VerdantNest Botanical Team
+  Made with 💚 by the VerdantNest Cloud & DevOps Engineering Team
 </p>
