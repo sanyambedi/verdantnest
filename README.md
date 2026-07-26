@@ -271,12 +271,12 @@ This project implements an enterprise-grade GitOps CI/CD pipeline deployed on AW
 
 ### ⚡ Verified Live Infrastructure & Endpoints
 
-| Component | Status | URL / Access Command | Credentials / Notes |
+| Component | Status | URL / Access Command | Security & Credentials |
 | :--- | :---: | :--- | :--- |
 | **Live Web App (EKS LoadBalancer)** | 🟢 **LIVE** | [http://a4ce61799c30e49eab665942229ba8cb-124042606.ap-south-1.elb.amazonaws.com](http://a4ce61799c30e49eab665942229ba8cb-124042606.ap-south-1.elb.amazonaws.com) | AWS Classic ELB to Next.js 15 |
-| **Jenkins CI/CD Server** | 🟢 **GREEN** | [http://13.201.57.68:8080](http://13.201.57.68:8080) | EC2 `t3.small` (2GB RAM, 30GB gp3 SSD) |
-| **ArgoCD GitOps Dashboard** | 🟢 **LIVE** | [http://a805bb727f3c34d3d985b6d4511fde03-1876114788.ap-south-1.elb.amazonaws.com](http://a805bb727f3c34d3d985b6d4511fde03-1876114788.ap-south-1.elb.amazonaws.com) | `admin` / `7V4pD0EOj4TpsOAC` |
-| **Grafana Monitoring UI** | 🟢 **LIVE** | `kubectl port-forward svc/monitoring-grafana -n monitoring 3000:80` → [http://localhost:3000](http://localhost:3000) | `admin` / `VerdantNest2024!` |
+| **Jenkins CI/CD Server** | 🟢 **GREEN** | [http://13.201.57.68:8080](http://13.201.57.68:8080) | Password: `sudo docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword` |
+| **ArgoCD GitOps Dashboard** | 🟢 **LIVE** | [http://a805bb727f3c34d3d985b6d4511fde03-1876114788.ap-south-1.elb.amazonaws.com](http://a805bb727f3c34d3d985b6d4511fde03-1876114788.ap-south-1.elb.amazonaws.com) | Password: `kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath='{.data.password}'` |
+| **Grafana Monitoring UI** | 🟢 **LIVE** | `kubectl port-forward svc/monitoring-grafana -n monitoring 3000:80` → [http://localhost:3000](http://localhost:3000) | Password: `kubectl -n monitoring get secret monitoring-grafana -o jsonpath='{.data.admin-password}'` |
 
 ### 🔄 Pipeline Flow
 
