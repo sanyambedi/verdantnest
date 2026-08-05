@@ -232,14 +232,7 @@ function ShopContent() {
 
 export default function ShopPage() {
   return (
-    <Suspense fallback={
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="text-center space-y-4">
-          <Leaf className="w-8 h-8 text-primary animate-pulse mx-auto" />
-          <p className="text-muted-foreground text-sm font-medium">Loading Botanical Collection...</p>
-        </div>
-      </div>
-    }>
+    <Suspense>
       <ShopContent />
     </Suspense>
   );
